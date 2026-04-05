@@ -3,7 +3,7 @@ badge: Umroh penuh ketenangan
 title: Melayani Ibadah Umroh dengan Nuansa yang Menenangkan dan Terpercaya.
 description: Wujudkan perjalanan ibadah yang terasa lebih hangat, tertata, dan
   nyaman bersama tim berpengalaman dengan fasilitas terbaik untuk setiap jamaah.
-imageSrc: /images/uploads/mekah.jpg
+imageSrc: /images/uploads/mekah.jpeg
 imageAlt: Suasana perjalanan umroh Al-Fajar
 primaryCta:
   label: Daftar Sekarang

@@ -26,7 +26,7 @@ moments:
       title: Perjalanan Menuju Madinah
       description: Momen awal keberangkatan, doa safar bersama, dan pendampingan tim
         sejak di bandara sampai tiba di hotel.
-      imageSrc: /images/uploads/makkah.jpg
+      imageSrc: /images/uploads/makkah.jpeg
       imageAlt: Perjalanan menuju Madinah
       objectPosition: center 35%
       layout: feature
@@ -34,7 +34,7 @@ moments:
       title: Tiba dan Beristirahat di Hotel
       description: Jamaah diarahkan untuk check-in, rehat sejenak, lalu bersiap
         mengikuti briefing perdana bersama pembimbing.
-      imageSrc: /images/uploads/kartu_peserta_0075659793.jpg
+      imageSrc: /images/uploads/makkah.jpeg
       imageAlt: Tiba dan beristirahat di hotel
       objectPosition: center 48%
       layout: stackTop
