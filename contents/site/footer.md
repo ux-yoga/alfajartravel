@@ -1,0 +1,33 @@
+---
+logoSrc: /logo-alfajar.png
+logoAlt: Logo Al-Fajar
+description: Melayani ibadah umroh dengan aman, nyaman, dan terpercaya. Wujudkan impian ibadah Anda bersama kami.
+quickLinks:
+  - label: Beranda
+    href: "#beranda"
+  - label: Tentang Kami
+    href: "#tentang"
+  - label: Paket Umroh
+    href: "#paket"
+  - label: Gallery
+    href: /gallery
+  - label: Testimoni
+    href: "#testimoni"
+contacts:
+  - label: Alamat
+    value: "Jl. Kadongdong, Kab. Karawang"
+  - label: Telepon
+    value: "+62 857-2396-6650"
+    href: https://wa.me/6285723966650
+  - label: Email
+    value: Ahsantafajarindonesia@gmail.com
+    href: mailto:Ahsantafajarindonesia@gmail.com
+socials:
+  - platform: facebook
+    url: https://www.facebook.com
+    label: Facebook
+  - platform: instagram
+    url: https://www.instagram.com/bimfrygaa/
+    label: Instagram
+copyright: Copyright 2024 Al-Fajar Umroh. All rights reserved.
+---

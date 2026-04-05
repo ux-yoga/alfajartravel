@@ -1,0 +1,264 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: REPLACE_ME/REPLACE_ME
+  branch: master
+
+editor:
+  preview: false
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site_content"
+    label: "Konten Website"
+    format: "frontmatter"
+    files:
+      - name: "navbar"
+        label: "Navbar"
+        file: "contents/site/navbar.md"
+        fields:
+          - { label: "Logo", name: "logoSrc", widget: "image" }
+          - { label: "Alt Logo", name: "logoAlt", widget: "string" }
+          - label: "Menu"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.label}} -> {{fields.href}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Tombol Kontak"
+            name: "contactCta"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+
+      - name: "home_hero"
+        label: "Home - Hero"
+        file: "contents/home/hero.md"
+        fields:
+          - { label: "Badge", name: "badge", widget: "string" }
+          - { label: "Judul", name: "title", widget: "string" }
+          - { label: "Deskripsi", name: "description", widget: "text" }
+          - { label: "Gambar", name: "imageSrc", widget: "image" }
+          - { label: "Alt Gambar", name: "imageAlt", widget: "string" }
+          - label: "Tombol Utama"
+            name: "primaryCta"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+
+      - name: "home_about"
+        label: "Home - Tentang"
+        file: "contents/home/about.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Judul", name: "title", widget: "string" }
+          - { label: "Deskripsi", name: "description", widget: "text" }
+          - label: "Kartu Info"
+            name: "cards"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options:
+                  - { label: "Shield Check", value: "shieldCheck" }
+                  - { label: "User Check", value: "userCheck" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "Statistik"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.value}} {{fields.label}}"
+            fields:
+              - { label: "Nilai", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - label: "Varian"
+                name: "variant"
+                widget: "select"
+                required: false
+                options:
+                  - { label: "Light", value: "light" }
+                  - { label: "Dark", value: "dark" }
+
+      - name: "home_pricing"
+        label: "Home - Pricing"
+        file: "contents/home/pricing.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Judul", name: "title", widget: "string" }
+          - { label: "Deskripsi", name: "description", widget: "text" }
+          - label: "Kartu Paket"
+            name: "cards"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.price}}"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Harga", name: "price", widget: "string" }
+              - { label: "Suffix Harga", name: "priceSuffix", widget: "string" }
+              - label: "Benefit"
+                name: "features"
+                widget: "list"
+                field: { label: "Benefit", name: "feature", widget: "string" }
+              - { label: "Highlight", name: "highlight", widget: "boolean", default: false, required: false }
+
+      - name: "home_testimonials"
+        label: "Home - Testimoni"
+        file: "contents/home/testimonials.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Judul", name: "title", widget: "string" }
+          - { label: "Deskripsi", name: "description", widget: "text" }
+          - label: "Daftar Testimoni"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Nama", name: "name", widget: "string" }
+              - { label: "Lokasi", name: "location", widget: "string" }
+              - { label: "Foto", name: "imageSrc", widget: "image", required: false }
+
+      - name: "footer"
+        label: "Footer"
+        file: "contents/site/footer.md"
+        fields:
+          - { label: "Logo", name: "logoSrc", widget: "image" }
+          - { label: "Alt Logo", name: "logoAlt", widget: "string" }
+          - { label: "Deskripsi", name: "description", widget: "text" }
+          - label: "Quick Links"
+            name: "quickLinks"
+            widget: "list"
+            summary: "{{fields.label}} -> {{fields.href}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Kontak"
+            name: "contacts"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Link", name: "href", widget: "string", required: false }
+          - label: "Sosial Media"
+            name: "socials"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - label: "Platform"
+                name: "platform"
+                widget: "select"
+                options:
+                  - { label: "Facebook", value: "facebook" }
+                  - { label: "Instagram", value: "instagram" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+          - { label: "Copyright", name: "copyright", widget: "string" }
+
+      - name: "gallery_page"
+        label: "Gallery"
+        file: "contents/gallery/page.md"
+        fields:
+          - label: "Metadata"
+            name: "metadata"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Deskripsi", name: "description", widget: "text" }
+              - { label: "Gambar", name: "imageSrc", widget: "image" }
+              - { label: "Alt Gambar", name: "imageAlt", widget: "string" }
+              - label: "Highlights"
+                name: "highlights"
+                widget: "list"
+                field: { label: "Highlight", name: "highlight", widget: "string" }
+          - label: "Moments"
+            name: "moments"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Deskripsi", name: "description", widget: "text" }
+              - label: "Item Gallery"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Tahun", name: "year", widget: "string" }
+                  - { label: "Judul", name: "title", widget: "string" }
+                  - { label: "Deskripsi", name: "description", widget: "text" }
+                  - { label: "Gambar", name: "imageSrc", widget: "image" }
+                  - { label: "Alt Gambar", name: "imageAlt", widget: "string" }
+                  - { label: "Object Position", name: "objectPosition", widget: "string" }
+                  - label: "Layout"
+                    name: "layout"
+                    widget: "select"
+                    options:
+                      - { label: "Feature", value: "feature" }
+                      - { label: "Stack Top", value: "stackTop" }
+                      - { label: "Stack Bottom", value: "stackBottom" }
+                      - { label: "Triptych Left", value: "triptychLeft" }
+                      - { label: "Triptych Center", value: "triptychCenter" }
+                      - { label: "Triptych Right", value: "triptychRight" }
+          - label: "Journey"
+            name: "journey"
+            widget: "object"
+            fields:
+              - { label: "Notes Eyebrow", name: "notesEyebrow", widget: "string" }
+              - { label: "Notes Title", name: "notesTitle", widget: "string" }
+              - { label: "Notes Description", name: "notesDescription", widget: "text" }
+              - label: "Notes"
+                name: "notes"
+                widget: "list"
+                field: { label: "Note", name: "note", widget: "string" }
+              - { label: "Flow Eyebrow", name: "flowEyebrow", widget: "string" }
+              - { label: "Flow Title", name: "flowTitle", widget: "string" }
+              - { label: "Flow Description", name: "flowDescription", widget: "text" }
+              - label: "Flow Items"
+                name: "flowItems"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - label: "Icon"
+                    name: "icon"
+                    widget: "select"
+                    options:
+                      - { label: "Plane Takeoff", value: "planeTakeoff" }
+                      - { label: "Map Pinned", value: "mapPinned" }
+                      - { label: "Calendar Days", value: "calendarDays" }
+                      - { label: "Heart Handshake", value: "heartHandshake" }
+                  - { label: "Judul", name: "title", widget: "string" }
+                  - { label: "Deskripsi", name: "description", widget: "text" }
+          - label: "CTA"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Deskripsi", name: "description", widget: "text" }
+              - label: "Tombol Paket"
+                name: "packageButton"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+              - label: "Tombol Konsultasi"
+                name: "consultationButton"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
