@@ -76,19 +76,21 @@ const Price = ({ content }: PriceProps) => {
                   ))}
                 </ul>
 
-                <Button
-                  asChild
-                  variant={card.highlight ? "secondary" : "default"}
-                  className={`mt-auto cursor-pointer rounded-full px-4 py-2 text-sm font-semibold sm:px-6 sm:py-3 ${
-                    card.highlight
-                      ? "bg-emerald-700 text-white motion-smooth hover:bg-emerald-800"
-                      : "border border-slate-200 bg-white text-slate-800 motion-smooth hover:border-emerald-700 hover:bg-emerald-700 hover:text-white"
-                  }`}
-                >
-                  <Link href={card.button.href} target="_blank" rel="noreferrer">
-                    {card.button.label}
-                  </Link>
-                </Button>
+                {card.button && (
+                  <Button
+                    asChild
+                    variant={card.highlight ? "secondary" : "default"}
+                    className={`mt-auto cursor-pointer rounded-full px-4 py-2 text-sm font-semibold sm:px-6 sm:py-3 transition-all ${
+                      card.highlight
+                        ? "bg-emerald-700 text-white hover:bg-emerald-800"
+                        : "border border-slate-200 bg-white text-slate-800 hover:border-emerald-700 hover:bg-emerald-700 hover:text-white"
+                    }`}
+                  >
+                    <Link href={card.button.href} target="_blank" rel="noreferrer">
+                      {card.button.label}
+                    </Link>
+                  </Button>
+                )}
               </div>
             ))}
           </div>
